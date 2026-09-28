@@ -5,6 +5,7 @@ export const DISH_ICON_BASE_PATH = "/dishes/icons/";
 const BOWL_DISH_SLUGS = new Set([
   "plain_rice", "rice_bowl", "rice_porridge", "oyakodon", "gyudon", "katsudon",
   "bibimbap", "poke_bowl", "ramen", "pho", "udon", "soba", "noodle_soup", "shellfish", "chawanmushi",
+  "oden", "tonjiru", "kenchinjiru", "ozoni", "chicken_soboro_bowl", "tendon", "unadon",
 ]);
 
 export function getDishIconShape(slug: string | null): "bowl" | undefined {
@@ -14,11 +15,52 @@ export function getDishIconShape(slug: string | null): "bowl" | undefined {
 type DishIconRule = {
   slug: string;
   keywords: readonly string[];
+  category?: DishIconCategory;
 };
 
 // 料理名から具体的な見た目を優先して解決する。一般語ほど後ろに置き、
 // 「カレーパン→カレー」「魚介パスタ→魚介」のような誤分類を避ける。
 const DISH_ICON_RULES: readonly DishIconRule[] = [
+  // Specific side dishes, soups and sweets precede broader ingredient/method matches.
+  { slug: "croquette", category: "vegetable", keywords: ["コロッケ","croquette","クリームコロッケ","potato croquette","korokke"] },
+  { slug: "menchi_katsu", category: "meat", keywords: ["メンチカツ","menchi katsu","ミンチカツ","minced meat cutlet"] },
+  { slug: "shrimp_fry", category: "seafood", keywords: ["エビフライ","fried shrimp","海老フライ","えびフライ","ebi fry","breaded shrimp"] },
+  { slug: "agedashi_tofu", category: "egg_bean", keywords: ["揚げ出し豆腐","agedashi tofu","揚げだし豆腐","揚出し豆腐"] },
+  { slug: "hiyayakko", category: "egg_bean", keywords: ["冷奴","hiyayakko","冷や奴","冷ややっこ","chilled tofu","cold tofu"] },
+  { slug: "chikuzenni", category: "soup_stew", keywords: ["筑前煮","chikuzenni","がめ煮","がめに"] },
+  { slug: "kinpira_gobo", category: "vegetable", keywords: ["きんぴらごぼう","kinpira gobo","きんぴら","金平","kinpira","braised burdock"] },
+  { slug: "spinach_ohitashi", category: "vegetable", keywords: ["おひたし","ohitashi","お浸し","ほうれん草のお浸し"] },
+  { slug: "goma_ae", category: "vegetable", keywords: ["ごま和え","goma ae","胡麻和え","胡麻あえ","ごまあえ","sesame dressed vegetables"] },
+  { slug: "sunomono", category: "vegetable", keywords: ["酢の物","sunomono","きゅうり酢","cucumber vinegar salad"] },
+  { slug: "shiraae", category: "egg_bean", keywords: ["白和え","shiraae","白あえ","しらあえ","shira ae"] },
+  { slug: "kabocha_nimono", category: "vegetable", keywords: ["かぼちゃの煮物","simmered kabocha","南瓜の煮物","かぼちゃの煮付","かぼちゃ煮","kabocha nimono"] },
+  { slug: "hijiki_nimono", category: "vegetable", keywords: ["ひじきの煮物","hijiki nimono","ひじき煮","simmered hijiki"] },
+  { slug: "kiriboshi_daikon", category: "vegetable", keywords: ["切り干し大根","kiriboshi daikon","切干大根","切干し大根","切り干しだいこん"] },
+  { slug: "oden", category: "soup_stew", keywords: ["おでん","oden"] },
+  { slug: "tonjiru", category: "soup_stew", keywords: ["豚汁","tonjiru","とん汁","とんじる","pork miso soup"] },
+  { slug: "kenchinjiru", category: "soup_stew", keywords: ["けんちん汁","kenchinjiru","建長汁","kenchin soup"] },
+  { slug: "ozoni", category: "soup_stew", keywords: ["お雑煮","ozoni","雑煮","zoni","mochi soup"] },
+  { slug: "miso_mackerel", category: "seafood", keywords: ["鯖の味噌煮","miso simmered mackerel","さばの味噌煮","サバの味噌煮","鯖味噌煮","さば味噌煮","saba misoni","mackerel in miso"] },
+  { slug: "fish_foil_bake", category: "seafood", keywords: ["鮭のホイル焼き","salmon foil bake","魚のホイル焼き","鮭のホイル","salmon in foil","foil baked fish","foil baked salmon"] },
+  { slug: "nanbanzuke", category: "seafood", keywords: ["南蛮漬け","nanbanzuke","南蛮漬","南蛮づけ","nanban zuke"] },
+  { slug: "chicken_soboro_bowl", category: "rice", keywords: ["そぼろ丼","soboro rice bowl","そぼろご飯","そぼろごはん","三色丼","soboro don","soboro donburi"] },
+  { slug: "tendon", category: "rice", keywords: ["天丼","tempura rice bowl","てんどん","tendon"] },
+  { slug: "unadon", category: "rice", keywords: ["うな丼","eel rice bowl","鰻丼","うな重","鰻重","unadon","unaju"] },
+  { slug: "kakiage", category: "vegetable", keywords: ["かき揚げ","kakiage","かきあげ","vegetable tempura fritter"] },
+  { slug: "chicken_tsukune", category: "meat", keywords: ["つくね","tsukune","chicken meatball skewer"] },
+  { slug: "pork_kakuni", category: "meat", keywords: ["豚の角煮","braised pork belly","豚角煮","角煮","kakuni"] },
+  { slug: "simmered_daikon", category: "vegetable", keywords: ["大根の煮物","simmered daikon","大根煮","ふろふき大根","daikon nimono"] },
+  { slug: "shumai", category: "meat", keywords: ["焼売","shumai","シュウマイ","しゅうまい","シューマイ","焼き売り","siu mai","shaomai"] },
+  { slug: "mapo_eggplant", category: "vegetable", keywords: ["麻婆茄子","mapo eggplant","麻婆なす","マーボーナス","マーボー茄子"] },
+  { slug: "chicken_piccata", category: "meat", keywords: ["チキンピカタ","chicken piccata","鶏のピカタ","鶏肉のピカタ","piccata"] },
+  { slug: "bagna_cauda", category: "vegetable", keywords: ["バーニャカウダ","bagna cauda"] },
+  { slug: "quiche", category: "bread_snack", keywords: ["キッシュ","quiche"] },
+  { slug: "seafood_ajillo", category: "seafood", keywords: ["アヒージョ","ajillo","gambas al ajillo","shrimp in garlic oil"] },
+  { slug: "caprese", category: "vegetable", keywords: ["カプレーゼ","caprese"] },
+  { slug: "sweet_potato_dessert", category: "dessert_drink", keywords: ["スイートポテト","japanese sweet potato cake","sweet potato cake"] },
+  { slug: "french_toast", category: "dessert_drink", keywords: ["フレンチトースト","french toast"] },
+  { slug: "apple_crumble", category: "dessert_drink", keywords: ["アップルクランブル","apple crumble","apple crisp"] },
+  { slug: "cinnamon_roll", category: "dessert_drink", keywords: ["シナモンロール","cinnamon roll","cinnamon bun"] },
   // Everyday dishes need their own silhouettes before generic steak/egg/stew rules.
   { slug: "hamburger_steak", keywords: ["ハンバーグ", "hamburg steak", "hamburger steak", "salisbury steak", "hambagu", "hambāgu", "tofu hamburger", "tofu hamburg"] },
   { slug: "nikujaga", keywords: ["肉じゃが", "肉ジャガ", "nikujaga", "japanese beef and potato stew", "japanese pork and potato stew", "japanese meat and potato stew"] },
@@ -223,6 +265,8 @@ export function getDishIconDisplayName(slug: string, language: "ja" | "en" = "ja
 }
 
 export function getDishIconCategory(slug: string): DishIconCategory {
+  const explicitCategory = DISH_ICON_RULES.find(rule => rule.slug === slug)?.category;
+  if (explicitCategory) return explicitCategory;
   if (slug === "chawanmushi" || slug === "tamagoyaki") return "egg_bean";
   if (slug === "omurice") return "rice";
   if (slug === "shrimp_chili") return "seafood";
@@ -266,7 +310,7 @@ export function getDishIconSlug(name: string): string | null {
 
   for (const rule of DISH_ICON_RULES) {
     // A stir-fried chicken dish is not deep-fried chicken.
-    if (stirFry && ["fried_chicken", "fried_fish", "fried_food"].includes(rule.slug)) continue;
+    if (stirFry && ["fried_chicken", "fried_fish", "fried_food", "shrimp_fry"].includes(rule.slug)) continue;
     const keyword = rule.keywords.find(keyword => matchesKeyword(normalized, keyword));
     if (!keyword) continue;
     // Let the dish (soup/salad/stir-fry) take precedence over a bare ingredient.

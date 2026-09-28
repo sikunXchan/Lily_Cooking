@@ -1,0 +1,603 @@
+{
+  "mode": "Built-in image generation; reference-guided sprite sheets",
+  "groups": [
+    {
+      "key": "home_cooking_03",
+      "columns": 5,
+      "rows": 3,
+      "prompt": "Use case: stylized-concept. Asset type: evenly spaced food-icon SPRITE SHEET for Sikurepi. Reference image is STYLE ONLY, not an edit target. Create ONE high-resolution landscape 5:3 transparent PNG sheet with EXACTLY 15 different dish icons in a STRICT 5 COLUMN by 3 ROW uniform grid, equal square cells. Request 3000x1800 pixels if possible. Each complete plate/bowl is centered at the exact center of its cell, occupies no more than 75% of cell width and height, separated from ALL cell boundaries by fully transparent generous gutters. No overlaps, no missing cells, no extras, no text/labels/numbers, no drawn grid, no external drop shadows. Genuine transparent alpha background throughout, not white or fake checkerboard. Warm polished cute hand-painted illustration matching reference, dark-brown contours, appetizing colors, consistent three-quarter view. Each plate/bowl has two black eyes, small smile and pink cheeks at the front. Keep each listed food visually distinct. Layout in ROW-MAJOR order, left to right then top to bottom:\nRow 1, column 1: Two golden oval potato croquettes, one split showing fluffy potato filling, on a plate.\nRow 1, column 2: Two round breaded ground-meat cutlets, one cut showing brown minced meat inside, on a plate.\nRow 1, column 3: Three long golden breaded shrimp with red tails and a lemon wedge on a plate.\nRow 1, column 4: Three large lightly golden fried tofu cubes with snowy daikon and scallions in amber dashi broth in a shallow bowl.\nRow 1, column 5: One square chilled snow-white tofu block topped with grated ginger and scallions, little soy sauce, on a small plate.\nRow 2, column 1: A bowl of soy-braised chicken chunks, distinctive lotus-root circles with holes, carrot, taro and shiitake.\nRow 2, column 2: A shallow small bowl of thin brown burdock and orange carrot matchsticks, glossy sesame sprinkled kinpira.\nRow 2, column 3: A neat short bundle of blanched deep-green spinach stems and leaves in a small dish, with a little bonito garnish.\nRow 2, column 4: A little bowl of bright green bean segments generously coated in coarse tan ground sesame dressing.\nRow 2, column 5: A small bowl of thin cucumber rings and dark wakame seaweed in clear vinegar dressing with sesame.\nRow 3, column 1: A small bowl of green spinach and thin orange carrot strips covered in crumbly snowy white tofu dressing.\nRow 3, column 2: Four thick orange kabocha squash wedges with dark-green rind in a little shallow bowl of clear amber broth.\nRow 3, column 3: A small bowl of fine glossy dark hijiki seaweed strands mixed with orange carrot slivers and pale soybeans.\nRow 3, column 4: A small bowl of pale tan thin curly dried-daikon strips, orange carrot and light-brown fried tofu strips simmered together.\nRow 3, column 5: A deep bowl of Japanese oden with a thick round daikon, brown egg, triangular konjac, tubular chikuwa fishcake in broth.",
+      "keys": [
+        "croquette",
+        "menchi_katsu",
+        "shrimp_fry",
+        "agedashi_tofu",
+        "hiyayakko",
+        "chikuzenni",
+        "kinpira_gobo",
+        "spinach_ohitashi",
+        "goma_ae",
+        "sunomono",
+        "shiraae",
+        "kabocha_nimono",
+        "hijiki_nimono",
+        "kiriboshi_daikon",
+        "oden"
+      ],
+      "source": "exec-d3e4e5f0-2fff-4511-a28a-c66dba600b0f.png"
+    },
+    {
+      "key": "home_cooking_04",
+      "columns": 5,
+      "rows": 3,
+      "prompt": "Use case: stylized-concept. Asset type: evenly spaced food-icon SPRITE SHEET for Sikurepi. Reference image is STYLE ONLY, not an edit target. Create ONE high-resolution landscape 5:3 transparent PNG sheet with EXACTLY 15 different dish icons in a STRICT 5 COLUMN by 3 ROW uniform grid, equal square cells. Request 3000x1800 pixels if possible. Each complete plate/bowl is centered at the exact center of its cell, occupies no more than 75% of cell width and height, separated from ALL cell boundaries by fully transparent generous gutters. No overlaps, no missing cells, no extras, no text/labels/numbers, no drawn grid, no external drop shadows. Genuine transparent alpha background throughout, not white or fake checkerboard. Warm polished cute hand-painted illustration matching reference, dark-brown contours, appetizing colors, consistent three-quarter view. Each plate/bowl has two black eyes, small smile and pink cheeks at the front. Keep each listed food visually distinct. Layout in ROW-MAJOR order, left to right then top to bottom:\nRow 1, column 1: A soup bowl of cloudy tan miso broth with thin pork, daikon, carrots, tofu and scallions, visibly hearty.\nRow 1, column 2: A soup bowl of clear broth, chunky white tofu, lotus root, carrot, daikon, greens; vegetable soup without pork.\nRow 1, column 3: A soup bowl of clear broth with a large square toasted mochi rice cake, pink-white fishcake, greens and carrot flower.\nRow 1, column 4: Two thick silver-blue-skinned mackerel fillet pieces coated in glossy brown miso sauce with ginger strips in a shallow dish.\nRow 1, column 5: An opened silver foil parcel containing a pink salmon fillet, mushrooms and carrot, lemon slice, on a small plate.\nRow 2, column 1: Small golden fried fish fillets topped with fine onion and orange carrot strips in a shallow dish of clear vinegar marinade.\nRow 2, column 2: A rice bowl neatly divided into three toppings: finely crumbled brown chicken, bright yellow scrambled egg and green beans.\nRow 2, column 3: A rice bowl piled with two long golden shrimp tempura and crisp vegetable tempura above white rice.\nRow 2, column 4: A rice bowl topped with three thick grilled eel fillet rectangles, dark glossy sauce and parallel grill marks.\nRow 2, column 5: Two round loose nests of golden vegetable tempura with visible onion strips, carrot matchsticks and green shiso, on a plate.\nRow 3, column 1: Two wooden skewers each with three rounded glazed chicken meatballs and sesame, on a small plate.\nRow 3, column 2: Three thick square layered pork belly cubes in glossy dark brown sauce with a halved brown egg on a shallow dish.\nRow 3, column 3: Three thick round translucent ivory daikon disks with a light amber glaze and green leaf garnish in a shallow bowl.\nRow 3, column 4: Four open-topped small steamed dumplings with pleated pale wrappers, visible pork filling and green peas on top, on an ivory plate.\nRow 3, column 5: Glossy purple eggplant wedges with crumbled mince in rich red-brown mapo sauce with scallions on an ivory plate.",
+      "keys": [
+        "tonjiru",
+        "kenchinjiru",
+        "ozoni",
+        "miso_mackerel",
+        "fish_foil_bake",
+        "nanbanzuke",
+        "chicken_soboro_bowl",
+        "tendon",
+        "unadon",
+        "kakiage",
+        "chicken_tsukune",
+        "pork_kakuni",
+        "simmered_daikon",
+        "shumai",
+        "mapo_eggplant"
+      ],
+      "source": "exec-eb71296d-3fd5-43b1-9c2c-18335f5460fa.png"
+    },
+    {
+      "key": "home_cooking_05",
+      "columns": 3,
+      "rows": 3,
+      "prompt": "Use case: stylized-concept. Asset type: evenly spaced food-icon SPRITE SHEET for Sikurepi. Reference image is STYLE ONLY, not an edit target. Create ONE high-resolution square transparent PNG sheet with EXACTLY 9 different dish icons in a STRICT 3 COLUMN by 3 ROW uniform grid, equal square cells. Request 1800x1800 pixels if possible. Each complete plate/bowl is centered at the exact center of its cell, occupies no more than 75% of cell width and height, separated from ALL cell boundaries by fully transparent generous gutters. No overlaps, no missing cells, no extras, no text/labels/numbers, no drawn grid, no external drop shadows. Genuine transparent alpha background throughout, not white or fake checkerboard. Warm polished cute hand-painted illustration matching reference, dark-brown contours, appetizing colors, consistent three-quarter view. Each plate/bowl has two black eyes, small smile and pink cheeks at the front. Keep each listed food visually distinct. Layout in ROW-MAJOR order, left to right then top to bottom:\nRow 1, column 1: Three thin golden egg-coated chicken cutlets topped with small capers and lemon slices in a light lemon sauce on a plate.\nRow 1, column 2: An ivory plate of upright colorful carrot, celery, pepper sticks and broccoli around a tiny central bowl of creamy beige dipping sauce.\nRow 1, column 3: A thick wedge of savory quiche with crimped golden pastry crust and pale egg filling dotted with spinach and pink bacon on a plate.\nRow 2, column 1: A shallow small ivory casserole of golden garlic oil with curled shrimp, mushrooms and red chili pieces.\nRow 2, column 2: Alternating thick red tomato and snow-white mozzarella slices arranged in a fan with large green basil leaves on a plate.\nRow 2, column 3: Three small golden oval baked Japanese sweet-potato cakes with smooth ridged tops and tiny dark sesame accents on a plate.\nRow 3, column 1: Two thick golden custard-soaked toast slices topped with a small butter square and amber syrup on a plate.\nRow 3, column 2: A small ivory baking bowl filled with golden crumble topping, visible soft apple slices at the edge and one scoop of vanilla cream.\nRow 3, column 3: Two round cinnamon spiral buns with thick white icing drizzled on top on an ivory plate.",
+      "keys": [
+        "chicken_piccata",
+        "bagna_cauda",
+        "quiche",
+        "seafood_ajillo",
+        "caprese",
+        "sweet_potato_dessert",
+        "french_toast",
+        "apple_crumble",
+        "cinnamon_roll"
+      ],
+      "source": "exec-d9788957-16a2-4466-972d-943eeeffa03f.png"
+    }
+  ],
+  "icons": [
+    {
+      "key": "croquette",
+      "ja": "コロッケ",
+      "en": "croquette",
+      "category": "vegetable",
+      "subject": "Two golden oval potato croquettes, one split showing fluffy potato filling, on a plate.",
+      "keywords": [
+        "コロッケ",
+        "croquette",
+        "クリームコロッケ",
+        "potato croquette",
+        "korokke"
+      ]
+    },
+    {
+      "key": "menchi_katsu",
+      "ja": "メンチカツ",
+      "en": "menchi katsu",
+      "category": "meat",
+      "subject": "Two round breaded ground-meat cutlets, one cut showing brown minced meat inside, on a plate.",
+      "keywords": [
+        "メンチカツ",
+        "menchi katsu",
+        "ミンチカツ",
+        "minced meat cutlet"
+      ]
+    },
+    {
+      "key": "shrimp_fry",
+      "ja": "エビフライ",
+      "en": "fried shrimp",
+      "category": "seafood",
+      "subject": "Three long golden breaded shrimp with red tails and a lemon wedge on a plate.",
+      "keywords": [
+        "エビフライ",
+        "fried shrimp",
+        "海老フライ",
+        "えびフライ",
+        "ebi fry",
+        "breaded shrimp"
+      ]
+    },
+    {
+      "key": "agedashi_tofu",
+      "ja": "揚げ出し豆腐",
+      "en": "agedashi tofu",
+      "category": "egg_bean",
+      "subject": "Three large lightly golden fried tofu cubes with snowy daikon and scallions in amber dashi broth in a shallow bowl.",
+      "keywords": [
+        "揚げ出し豆腐",
+        "agedashi tofu",
+        "揚げだし豆腐",
+        "揚出し豆腐"
+      ]
+    },
+    {
+      "key": "hiyayakko",
+      "ja": "冷奴",
+      "en": "hiyayakko",
+      "category": "egg_bean",
+      "subject": "One square chilled snow-white tofu block topped with grated ginger and scallions, little soy sauce, on a small plate.",
+      "keywords": [
+        "冷奴",
+        "hiyayakko",
+        "冷や奴",
+        "冷ややっこ",
+        "chilled tofu",
+        "cold tofu"
+      ]
+    },
+    {
+      "key": "chikuzenni",
+      "ja": "筑前煮",
+      "en": "chikuzenni",
+      "category": "soup_stew",
+      "subject": "A bowl of soy-braised chicken chunks, distinctive lotus-root circles with holes, carrot, taro and shiitake.",
+      "keywords": [
+        "筑前煮",
+        "chikuzenni",
+        "がめ煮",
+        "がめに"
+      ]
+    },
+    {
+      "key": "kinpira_gobo",
+      "ja": "きんぴらごぼう",
+      "en": "kinpira gobo",
+      "category": "vegetable",
+      "subject": "A shallow small bowl of thin brown burdock and orange carrot matchsticks, glossy sesame sprinkled kinpira.",
+      "keywords": [
+        "きんぴらごぼう",
+        "kinpira gobo",
+        "きんぴら",
+        "金平",
+        "kinpira",
+        "braised burdock"
+      ]
+    },
+    {
+      "key": "spinach_ohitashi",
+      "ja": "おひたし",
+      "en": "ohitashi",
+      "category": "vegetable",
+      "subject": "A neat short bundle of blanched deep-green spinach stems and leaves in a small dish, with a little bonito garnish.",
+      "keywords": [
+        "おひたし",
+        "ohitashi",
+        "お浸し",
+        "ほうれん草のお浸し"
+      ]
+    },
+    {
+      "key": "goma_ae",
+      "ja": "ごま和え",
+      "en": "goma ae",
+      "category": "vegetable",
+      "subject": "A little bowl of bright green bean segments generously coated in coarse tan ground sesame dressing.",
+      "keywords": [
+        "ごま和え",
+        "goma ae",
+        "胡麻和え",
+        "胡麻あえ",
+        "ごまあえ",
+        "sesame dressed vegetables"
+      ]
+    },
+    {
+      "key": "sunomono",
+      "ja": "酢の物",
+      "en": "sunomono",
+      "category": "vegetable",
+      "subject": "A small bowl of thin cucumber rings and dark wakame seaweed in clear vinegar dressing with sesame.",
+      "keywords": [
+        "酢の物",
+        "sunomono",
+        "きゅうり酢",
+        "cucumber vinegar salad"
+      ]
+    },
+    {
+      "key": "shiraae",
+      "ja": "白和え",
+      "en": "shiraae",
+      "category": "egg_bean",
+      "subject": "A small bowl of green spinach and thin orange carrot strips covered in crumbly snowy white tofu dressing.",
+      "keywords": [
+        "白和え",
+        "shiraae",
+        "白あえ",
+        "しらあえ",
+        "shira ae"
+      ]
+    },
+    {
+      "key": "kabocha_nimono",
+      "ja": "かぼちゃの煮物",
+      "en": "simmered kabocha",
+      "category": "vegetable",
+      "subject": "Four thick orange kabocha squash wedges with dark-green rind in a little shallow bowl of clear amber broth.",
+      "keywords": [
+        "かぼちゃの煮物",
+        "simmered kabocha",
+        "南瓜の煮物",
+        "かぼちゃの煮付",
+        "かぼちゃ煮",
+        "kabocha nimono"
+      ]
+    },
+    {
+      "key": "hijiki_nimono",
+      "ja": "ひじきの煮物",
+      "en": "hijiki nimono",
+      "category": "vegetable",
+      "subject": "A small bowl of fine glossy dark hijiki seaweed strands mixed with orange carrot slivers and pale soybeans.",
+      "keywords": [
+        "ひじきの煮物",
+        "hijiki nimono",
+        "ひじき煮",
+        "simmered hijiki"
+      ]
+    },
+    {
+      "key": "kiriboshi_daikon",
+      "ja": "切り干し大根",
+      "en": "kiriboshi daikon",
+      "category": "vegetable",
+      "subject": "A small bowl of pale tan thin curly dried-daikon strips, orange carrot and light-brown fried tofu strips simmered together.",
+      "keywords": [
+        "切り干し大根",
+        "kiriboshi daikon",
+        "切干大根",
+        "切干し大根",
+        "切り干しだいこん"
+      ]
+    },
+    {
+      "key": "oden",
+      "ja": "おでん",
+      "en": "oden",
+      "category": "soup_stew",
+      "subject": "A deep bowl of Japanese oden with a thick round daikon, brown egg, triangular konjac, tubular chikuwa fishcake in broth.",
+      "keywords": [
+        "おでん",
+        "oden"
+      ]
+    },
+    {
+      "key": "tonjiru",
+      "ja": "豚汁",
+      "en": "tonjiru",
+      "category": "soup_stew",
+      "subject": "A soup bowl of cloudy tan miso broth with thin pork, daikon, carrots, tofu and scallions, visibly hearty.",
+      "keywords": [
+        "豚汁",
+        "tonjiru",
+        "とん汁",
+        "とんじる",
+        "pork miso soup"
+      ]
+    },
+    {
+      "key": "kenchinjiru",
+      "ja": "けんちん汁",
+      "en": "kenchinjiru",
+      "category": "soup_stew",
+      "subject": "A soup bowl of clear broth, chunky white tofu, lotus root, carrot, daikon, greens; vegetable soup without pork.",
+      "keywords": [
+        "けんちん汁",
+        "kenchinjiru",
+        "建長汁",
+        "kenchin soup"
+      ]
+    },
+    {
+      "key": "ozoni",
+      "ja": "お雑煮",
+      "en": "ozoni",
+      "category": "soup_stew",
+      "subject": "A soup bowl of clear broth with a large square toasted mochi rice cake, pink-white fishcake, greens and carrot flower.",
+      "keywords": [
+        "お雑煮",
+        "ozoni",
+        "雑煮",
+        "zoni",
+        "mochi soup"
+      ]
+    },
+    {
+      "key": "miso_mackerel",
+      "ja": "鯖の味噌煮",
+      "en": "miso simmered mackerel",
+      "category": "seafood",
+      "subject": "Two thick silver-blue-skinned mackerel fillet pieces coated in glossy brown miso sauce with ginger strips in a shallow dish.",
+      "keywords": [
+        "鯖の味噌煮",
+        "miso simmered mackerel",
+        "さばの味噌煮",
+        "サバの味噌煮",
+        "鯖味噌煮",
+        "さば味噌煮",
+        "saba misoni",
+        "mackerel in miso"
+      ]
+    },
+    {
+      "key": "fish_foil_bake",
+      "ja": "鮭のホイル焼き",
+      "en": "salmon foil bake",
+      "category": "seafood",
+      "subject": "An opened silver foil parcel containing a pink salmon fillet, mushrooms and carrot, lemon slice, on a small plate.",
+      "keywords": [
+        "鮭のホイル焼き",
+        "salmon foil bake",
+        "魚のホイル焼き",
+        "鮭のホイル",
+        "salmon in foil",
+        "foil baked fish",
+        "foil baked salmon"
+      ]
+    },
+    {
+      "key": "nanbanzuke",
+      "ja": "南蛮漬け",
+      "en": "nanbanzuke",
+      "category": "seafood",
+      "subject": "Small golden fried fish fillets topped with fine onion and orange carrot strips in a shallow dish of clear vinegar marinade.",
+      "keywords": [
+        "南蛮漬け",
+        "nanbanzuke",
+        "南蛮漬",
+        "南蛮づけ",
+        "nanban zuke"
+      ]
+    },
+    {
+      "key": "chicken_soboro_bowl",
+      "ja": "そぼろ丼",
+      "en": "soboro rice bowl",
+      "category": "rice",
+      "subject": "A rice bowl neatly divided into three toppings: finely crumbled brown chicken, bright yellow scrambled egg and green beans.",
+      "keywords": [
+        "そぼろ丼",
+        "soboro rice bowl",
+        "そぼろご飯",
+        "そぼろごはん",
+        "三色丼",
+        "soboro don",
+        "soboro donburi"
+      ]
+    },
+    {
+      "key": "tendon",
+      "ja": "天丼",
+      "en": "tempura rice bowl",
+      "category": "rice",
+      "subject": "A rice bowl piled with two long golden shrimp tempura and crisp vegetable tempura above white rice.",
+      "keywords": [
+        "天丼",
+        "tempura rice bowl",
+        "てんどん",
+        "tendon"
+      ]
+    },
+    {
+      "key": "unadon",
+      "ja": "うな丼",
+      "en": "eel rice bowl",
+      "category": "rice",
+      "subject": "A rice bowl topped with three thick grilled eel fillet rectangles, dark glossy sauce and parallel grill marks.",
+      "keywords": [
+        "うな丼",
+        "eel rice bowl",
+        "鰻丼",
+        "うな重",
+        "鰻重",
+        "unadon",
+        "unaju"
+      ]
+    },
+    {
+      "key": "kakiage",
+      "ja": "かき揚げ",
+      "en": "kakiage",
+      "category": "vegetable",
+      "subject": "Two round loose nests of golden vegetable tempura with visible onion strips, carrot matchsticks and green shiso, on a plate.",
+      "keywords": [
+        "かき揚げ",
+        "kakiage",
+        "かきあげ",
+        "vegetable tempura fritter"
+      ]
+    },
+    {
+      "key": "chicken_tsukune",
+      "ja": "つくね",
+      "en": "tsukune",
+      "category": "meat",
+      "subject": "Two wooden skewers each with three rounded glazed chicken meatballs and sesame, on a small plate.",
+      "keywords": [
+        "つくね",
+        "tsukune",
+        "chicken meatball skewer"
+      ]
+    },
+    {
+      "key": "pork_kakuni",
+      "ja": "豚の角煮",
+      "en": "braised pork belly",
+      "category": "meat",
+      "subject": "Three thick square layered pork belly cubes in glossy dark brown sauce with a halved brown egg on a shallow dish.",
+      "keywords": [
+        "豚の角煮",
+        "braised pork belly",
+        "豚角煮",
+        "角煮",
+        "kakuni"
+      ]
+    },
+    {
+      "key": "simmered_daikon",
+      "ja": "大根の煮物",
+      "en": "simmered daikon",
+      "category": "vegetable",
+      "subject": "Three thick round translucent ivory daikon disks with a light amber glaze and green leaf garnish in a shallow bowl.",
+      "keywords": [
+        "大根の煮物",
+        "simmered daikon",
+        "大根煮",
+        "ふろふき大根",
+        "daikon nimono"
+      ]
+    },
+    {
+      "key": "shumai",
+      "ja": "焼売",
+      "en": "shumai",
+      "category": "meat",
+      "subject": "Four open-topped small steamed dumplings with pleated pale wrappers, visible pork filling and green peas on top, on an ivory plate.",
+      "keywords": [
+        "焼売",
+        "shumai",
+        "シュウマイ",
+        "しゅうまい",
+        "シューマイ",
+        "焼き売り",
+        "siu mai",
+        "shaomai"
+      ]
+    },
+    {
+      "key": "mapo_eggplant",
+      "ja": "麻婆茄子",
+      "en": "mapo eggplant",
+      "category": "vegetable",
+      "subject": "Glossy purple eggplant wedges with crumbled mince in rich red-brown mapo sauce with scallions on an ivory plate.",
+      "keywords": [
+        "麻婆茄子",
+        "mapo eggplant",
+        "麻婆なす",
+        "マーボーナス",
+        "マーボー茄子"
+      ]
+    },
+    {
+      "key": "chicken_piccata",
+      "ja": "チキンピカタ",
+      "en": "chicken piccata",
+      "category": "meat",
+      "subject": "Three thin golden egg-coated chicken cutlets topped with small capers and lemon slices in a light lemon sauce on a plate.",
+      "keywords": [
+        "チキンピカタ",
+        "chicken piccata",
+        "鶏のピカタ",
+        "鶏肉のピカタ",
+        "piccata"
+      ]
+    },
+    {
+      "key": "bagna_cauda",
+      "ja": "バーニャカウダ",
+      "en": "bagna cauda",
+      "category": "vegetable",
+      "subject": "An ivory plate of upright colorful carrot, celery, pepper sticks and broccoli around a tiny central bowl of creamy beige dipping sauce.",
+      "keywords": [
+        "バーニャカウダ",
+        "bagna cauda"
+      ]
+    },
+    {
+      "key": "quiche",
+      "ja": "キッシュ",
+      "en": "quiche",
+      "category": "bread_snack",
+      "subject": "A thick wedge of savory quiche with crimped golden pastry crust and pale egg filling dotted with spinach and pink bacon on a plate.",
+      "keywords": [
+        "キッシュ",
+        "quiche"
+      ]
+    },
+    {
+      "key": "seafood_ajillo",
+      "ja": "アヒージョ",
+      "en": "ajillo",
+      "category": "seafood",
+      "subject": "A shallow small ivory casserole of golden garlic oil with curled shrimp, mushrooms and red chili pieces.",
+      "keywords": [
+        "アヒージョ",
+        "ajillo",
+        "gambas al ajillo",
+        "shrimp in garlic oil"
+      ]
+    },
+    {
+      "key": "caprese",
+      "ja": "カプレーゼ",
+      "en": "caprese",
+      "category": "vegetable",
+      "subject": "Alternating thick red tomato and snow-white mozzarella slices arranged in a fan with large green basil leaves on a plate.",
+      "keywords": [
+        "カプレーゼ",
+        "caprese"
+      ]
+    },
+    {
+      "key": "sweet_potato_dessert",
+      "ja": "スイートポテト",
+      "en": "japanese sweet potato cake",
+      "category": "dessert_drink",
+      "subject": "Three small golden oval baked Japanese sweet-potato cakes with smooth ridged tops and tiny dark sesame accents on a plate.",
+      "keywords": [
+        "スイートポテト",
+        "japanese sweet potato cake",
+        "sweet potato cake"
+      ]
+    },
+    {
+      "key": "french_toast",
+      "ja": "フレンチトースト",
+      "en": "french toast",
+      "category": "dessert_drink",
+      "subject": "Two thick golden custard-soaked toast slices topped with a small butter square and amber syrup on a plate.",
+      "keywords": [
+        "フレンチトースト",
+        "french toast"
+      ]
+    },
+    {
+      "key": "apple_crumble",
+      "ja": "アップルクランブル",
+      "en": "apple crumble",
+      "category": "dessert_drink",
+      "subject": "A small ivory baking bowl filled with golden crumble topping, visible soft apple slices at the edge and one scoop of vanilla cream.",
+      "keywords": [
+        "アップルクランブル",
+        "apple crumble",
+        "apple crisp"
+      ]
+    },
+    {
+      "key": "cinnamon_roll",
+      "ja": "シナモンロール",
+      "en": "cinnamon roll",
+      "category": "dessert_drink",
+      "subject": "Two round cinnamon spiral buns with thick white icing drizzled on top on an ivory plate.",
+      "keywords": [
+        "シナモンロール",
+        "cinnamon roll",
+        "cinnamon bun"
+      ]
+    }
+  ]
+}

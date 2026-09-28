@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "test:dish-icons": "node --no-warnings --experimental-strip-types scripts/test-dish-icon-expansion.mjs",
     "test:history-recipe-ux": "node --no-warnings --experimental-strip-types scripts/test-history-recipe-ux.mjs",
     "prepare:ios-icon": "node scripts/prepare-ios-icon.mjs",
     "predev": "node scripts/build-ingredient-thumbnails.mjs",
