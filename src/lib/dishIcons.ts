@@ -4,7 +4,7 @@ export const DISH_ICON_BASE_PATH = "/dishes/icons/";
 // regardless of whether the recipe is viewed in a list or full screen.
 const BOWL_DISH_SLUGS = new Set([
   "plain_rice", "rice_bowl", "rice_porridge", "oyakodon", "gyudon", "katsudon",
-  "bibimbap", "poke_bowl", "ramen", "pho", "udon", "soba", "noodle_soup", "shellfish",
+  "bibimbap", "poke_bowl", "ramen", "pho", "udon", "soba", "noodle_soup", "shellfish", "chawanmushi",
 ]);
 
 export function getDishIconShape(slug: string | null): "bowl" | undefined {
@@ -19,6 +19,18 @@ type DishIconRule = {
 // 料理名から具体的な見た目を優先して解決する。一般語ほど後ろに置き、
 // 「カレーパン→カレー」「魚介パスタ→魚介」のような誤分類を避ける。
 const DISH_ICON_RULES: readonly DishIconRule[] = [
+  // Everyday dishes need their own silhouettes before generic steak/egg/stew rules.
+  { slug: "hamburger_steak", keywords: ["ハンバーグ", "hamburg steak", "hamburger steak", "salisbury steak", "hambagu", "hambāgu", "tofu hamburger", "tofu hamburg"] },
+  { slug: "nikujaga", keywords: ["肉じゃが", "肉ジャガ", "nikujaga", "japanese beef and potato stew", "japanese pork and potato stew", "japanese meat and potato stew"] },
+  { slug: "cabbage_rolls", keywords: ["ロールキャベツ", "キャベツロール", "cabbage roll", "stuffed cabbage", "rolled cabbage"] },
+  { slug: "ginger_pork", keywords: ["生姜焼き", "生姜焼", "しょうが焼", "ショウガ焼", "shogayaki", "shōgayaki", "ginger pork", "pork ginger", "ginger glazed pork", "ginger grilled pork"] },
+  { slug: "omurice", keywords: ["オムライス", "omurice", "omu rice", "omelet rice", "omelette rice", "rice omelet", "rice omelette"] },
+  { slug: "tamagoyaki", keywords: ["卵焼き", "玉子焼き", "卵焼", "玉子焼", "だし巻", "出汁巻", "tamagoyaki", "dashimaki", "rolled omelet", "rolled omelette", "japanese rolled egg"] },
+  { slug: "chicken_nanban", keywords: ["チキン南蛮", "鶏の南蛮", "chicken nanban", "nanban chicken"] },
+  { slug: "gratin", keywords: ["グラタン", "ドリア", "gratin", "doria"] },
+  { slug: "chawanmushi", keywords: ["茶碗蒸し", "茶わん蒸し", "ちゃわんむし", "chawanmushi", "savory egg custard", "savoury egg custard", "steamed egg custard"] },
+  { slug: "shrimp_chili", keywords: ["エビチリ", "えびチリ", "海老チリ", "エビのチリ", "えびのチリ", "海老のチリ", "ebi chili", "ebi chilli", "chili shrimp", "chilli shrimp", "shrimp in chili sauce", "shrimp in chilli sauce", "prawns in chili sauce", "prawns in chilli sauce"] },
+  { slug: "meat_rolls", keywords: ["肉巻き", "肉巻", "肉まき", "豚巻き", "豚バラ巻", "牛肉巻き", "ベーコン巻", "nikumaki", "negimaki", "meat roll", "pork roll", "beef roll", "bacon wrapped", "pork wrapped", "beef wrapped", "wrapped in pork", "wrapped in beef", "wrapped in bacon"] },
   // 文化圏ごとの代表料理は、見た目の近い汎用カテゴリへ落とす前に固有画像を優先する。
   { slug: "oyakodon", keywords: ["親子丼", "oyakodon", "chicken and egg rice bowl"] },
   { slug: "gyudon", keywords: ["牛丼", "gyudon", "beef bowl"] },
@@ -26,7 +38,7 @@ const DISH_ICON_RULES: readonly DishIconRule[] = [
   { slug: "tempura", keywords: ["天ぷら", "天麩羅", "tempura"] },
   { slug: "miso_soup", keywords: ["味噌汁", "みそ汁", "miso soup"] },
   { slug: "yakisoba", keywords: ["焼きそば", "焼そば", "yakisoba"] },
-  { slug: "teriyaki_chicken", keywords: ["照り焼きチキン", "鶏の照り焼き", "teriyaki chicken"] },
+  { slug: "teriyaki_chicken", keywords: ["照り焼きチキン", "鶏の照り焼き", "鶏肉の照り焼き", "鶏ももの照り焼き", "鶏むねの照り焼き", "teriyaki chicken", "chicken teriyaki"] },
   { slug: "bulgogi", keywords: ["プルコギ", "불고기", "bulgogi"] },
   { slug: "tteokbokki", keywords: ["トッポギ", "떡볶이", "tteokbokki", "topokki"] },
   { slug: "japchae", keywords: ["チャプチェ", "잡채", "japchae"] },
@@ -211,6 +223,10 @@ export function getDishIconDisplayName(slug: string, language: "ja" | "en" = "ja
 }
 
 export function getDishIconCategory(slug: string): DishIconCategory {
+  if (slug === "chawanmushi" || slug === "tamagoyaki") return "egg_bean";
+  if (slug === "omurice") return "rice";
+  if (slug === "shrimp_chili") return "seafood";
+  if (["nikujaga", "cabbage_rolls", "gratin"].includes(slug)) return "soup_stew";
   if (/(cake|tart|pie_slice|pancake|waffle|crepe|donut|cupcake|cookie|brownie|pudding|custard|ice_cream|popsicle|shaved_ice|fruit_bowl|mochi|sweet_bun|chocolate|parfait|smoothie|hot_drink)/.test(slug)) return "dessert_drink";
   if (/(ramen|pho|udon|soba|yakisoba|tteokbokki|japchae|laksa|pad_thai|pasta|gnocchi|noodle)/.test(slug)) return "noodle";
   if (/(rice|don$|donburi|bibimbap|poke_bowl|nasi_goreng|jollof|pilaf|biryani|risotto|paella|sushi)/.test(slug)) return "rice";
@@ -224,29 +240,62 @@ export function getDishIconCategory(slug: string): DishIconCategory {
 }
 
 function normalizeDishName(name: string): string {
-  return name.normalize("NFKC").toLocaleLowerCase().replace(/[‐‑‒–—―]/g, "-");
+  return name.normalize("NFKC").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").normalize("NFC")
+    .replace(/[‐‑‒–—―-]/g, " ").replace(/\s+/g, " ").trim();
+}
+
+function matchesKeyword(name: string, keyword: string): boolean {
+  const normalized = normalizeDishName(keyword);
+  if (containsJapanese(normalized) || !/^[a-z]/.test(normalized)) return name.includes(normalized);
+  const escaped = normalized.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  // English fragments such as tea/pho/cod must not match steamed/photograph/avocado.
+  return new RegExp(`(?:^|[^a-z])${escaped}(?:s|es)?(?:$|[^a-z])`).test(name);
 }
 
 export function getDishIconSlug(name: string): string | null {
   const normalized = normalizeDishName(name);
   if (!normalized) return null;
 
+  const meat = /(豚|牛|鶏|チキン|ポーク|ビーフ|肉|ベーコン)/.test(normalized)
+    || /\b(pork|beef|chicken|meat|bacon|turkey)\b/.test(normalized);
+  const fish = /(魚|鮭|さけ|サーモン|鯖|さば|鰤|ぶり|鱈|たら)/.test(normalized)
+    || /\b(fish|salmon|mackerel|cod|trout|tuna)\b/.test(normalized);
+  const stirFry = /炒/.test(normalized) || /\bstir (?:fry|fried|frying)\b/.test(normalized);
+  const saute = /ソテー/.test(normalized) || /\bsaute(?:ed)?\b/.test(normalized);
+  let ingredientFallback: string | null = null;
+
   for (const rule of DISH_ICON_RULES) {
-    if (rule.keywords.some(keyword => normalized.includes(keyword.toLocaleLowerCase()))) {
-      return rule.slug;
+    // A stir-fried chicken dish is not deep-fried chicken.
+    if (stirFry && ["fried_chicken", "fried_fish", "fried_food"].includes(rule.slug)) continue;
+    const keyword = rule.keywords.find(keyword => matchesKeyword(normalized, keyword));
+    if (!keyword) continue;
+    // Let the dish (soup/salad/stir-fry) take precedence over a bare ingredient.
+    if (["tofu", "lentil", "beans"].includes(keyword)) {
+      ingredientFallback ??= rule.slug;
+      continue;
     }
+    if (rule.slug === "vegetable_stir_fry" && meat) return "meat_stir_fry";
+    return rule.slug;
   }
 
   // AIが「豚バラとキャベツの旨辛炒め」のように食材を料理法の間へ挟むと、
   // 完全な語句ルールだけでは既存アイコンを使えない。料理法＋主役カテゴリの
   // 組み合わせで最後の補完を行い、ジャンルの汎用画像へ落ちる件数を減らす。
-  if (/(豚|牛|鶏|チキン|ポーク|ビーフ|肉|pork|beef|chicken)/.test(normalized) && /(炒|ソテー|stir.?fry|saute)/.test(normalized)) return "meat_stir_fry";
-  if (/(魚|鮭|さけ|サーモン|鯖|さば|鰤|ぶり|鱈|たら|fish|salmon|mackerel|cod)/.test(normalized) && /(焼|グリル|ホイル|ムニエル|grill|bake|meuniere)/.test(normalized)) return "grilled_fish";
-  if (/(炒|ソテー|stir.?fry|saute)/.test(normalized)) return "vegetable_stir_fry";
+  if (meat && stirFry) return "meat_stir_fry";
+  if (fish && (saute || /(焼|グリル|ホイル|ムニエル|grill|bake|meuniere|pan sear|pan fried)/.test(normalized))) return "grilled_fish";
+  if (/(鶏|チキン)/.test(normalized) || /\bchicken\b/.test(normalized)) {
+    if (/(照り焼|照焼|teriyaki)/.test(normalized)) return "teriyaki_chicken";
+    if (/(ロースト|roast)/.test(normalized)) return "roast_chicken";
+    if (saute || /(焼|グリル|grill|bake|pan sear)/.test(normalized)) return "grilled_chicken";
+  }
+  if (meat && saute) return "meat_stir_fry";
+  if (stirFry || saute) return "vegetable_stir_fry";
   if (/(汁|スープ|味噌汁|soup|broth)/.test(normalized)) return "clear_soup";
   if (/(煮|煮込|stew|braise)/.test(normalized)) return "stew";
+  if (meat && /(焼|グリル|grill|pan sear)/.test(normalized)) return "grilled_meat";
+  if (/(蒸し|steamed)/.test(normalized) && /(野菜|キャベツ|ブロッコリー|carrot|broccoli|cabbage|vegetable)/.test(normalized)) return "steamed_vegetables";
   if (/(焼|オーブン|bake|roast)/.test(normalized)) return "baked_dish";
-  return null;
+  return ingredientFallback;
 }
 
 export function getDishIconUrl(name: string): string | null {

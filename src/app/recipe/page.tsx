@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useScreenWakeLock } from "@/lib/useScreenWakeLock";
 import { useRouter } from "next/navigation";
 import { CircleAlert, Loader2, ChevronDown, ChevronUp, Bookmark, Check, Plus, Minus, Lightbulb, PlayCircle, RefreshCw, SlidersHorizontal, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -546,6 +547,7 @@ export default function RecipePage() {
     return acc;
   }, {});
   const detailRecipe = externalPreviewRecipe || (expandedIndex >= 0 ? recipes[expandedIndex] : null);
+  useScreenWakeLock(Boolean(detailRecipe) && !cookingSessionRecipe && !cookedModalRecipe);
   const detailIndex = externalPreviewRecipe ? undefined : expandedIndex >= 0 ? expandedIndex : undefined;
   const detailRecipeKey = detailRecipe
     ? `${detailRecipe.source || 'generated'}:${detailRecipe.sourceRecipeId || (detailIndex ?? 'preview')}:${detailRecipe.title}`

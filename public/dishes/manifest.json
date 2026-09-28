@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "count": 150,
+  "count": 161,
   "canvas": {
     "width": 512,
     "height": 512,
@@ -3495,6 +3495,271 @@
               410
             ],
             "minimum_margin": 46,
+            "edge_clear": true
+          }
+        }
+      ]
+    },
+    {
+      "key": "home_cooking_01",
+      "count": 1,
+      "icons": [
+        {
+          "key": "meat_rolls",
+          "file": "icons/meat_rolls.png",
+          "qa": {
+            "size": [
+              512,
+              512
+            ],
+            "mode": "RGBA",
+            "alpha_extrema": [
+              0,
+              255
+            ],
+            "content_bbox": [
+              58,
+              101,
+              465,
+              403
+            ],
+            "minimum_margin": 47,
+            "edge_clear": true
+          }
+        }
+      ]
+    },
+    {
+      "key": "home_cooking_02",
+      "count": 10,
+      "icons": [
+        {
+          "key": "hamburger_steak",
+          "file": "icons/hamburger_steak.png",
+          "qa": {
+            "size": [
+              512,
+              512
+            ],
+            "mode": "RGBA",
+            "alpha_extrema": [
+              0,
+              255
+            ],
+            "content_bbox": [
+              27,
+              89,
+              485,
+              421
+            ],
+            "minimum_margin": 27,
+            "edge_clear": true
+          }
+        },
+        {
+          "key": "nikujaga",
+          "file": "icons/nikujaga.png",
+          "qa": {
+            "size": [
+              512,
+              512
+            ],
+            "mode": "RGBA",
+            "alpha_extrema": [
+              0,
+              255
+            ],
+            "content_bbox": [
+              36,
+              95,
+              476,
+              426
+            ],
+            "minimum_margin": 36,
+            "edge_clear": true
+          }
+        },
+        {
+          "key": "cabbage_rolls",
+          "file": "icons/cabbage_rolls.png",
+          "qa": {
+            "size": [
+              512,
+              512
+            ],
+            "mode": "RGBA",
+            "alpha_extrema": [
+              0,
+              255
+            ],
+            "content_bbox": [
+              29,
+              94,
+              482,
+              417
+            ],
+            "minimum_margin": 29,
+            "edge_clear": true
+          }
+        },
+        {
+          "key": "ginger_pork",
+          "file": "icons/ginger_pork.png",
+          "qa": {
+            "size": [
+              512,
+              512
+            ],
+            "mode": "RGBA",
+            "alpha_extrema": [
+              0,
+              255
+            ],
+            "content_bbox": [
+              19,
+              81,
+              494,
+              430
+            ],
+            "minimum_margin": 18,
+            "edge_clear": true
+          }
+        },
+        {
+          "key": "omurice",
+          "file": "icons/omurice.png",
+          "qa": {
+            "size": [
+              512,
+              512
+            ],
+            "mode": "RGBA",
+            "alpha_extrema": [
+              0,
+              255
+            ],
+            "content_bbox": [
+              31,
+              104,
+              481,
+              407
+            ],
+            "minimum_margin": 31,
+            "edge_clear": true
+          }
+        },
+        {
+          "key": "tamagoyaki",
+          "file": "icons/tamagoyaki.png",
+          "qa": {
+            "size": [
+              512,
+              512
+            ],
+            "mode": "RGBA",
+            "alpha_extrema": [
+              0,
+              255
+            ],
+            "content_bbox": [
+              23,
+              99,
+              490,
+              413
+            ],
+            "minimum_margin": 22,
+            "edge_clear": true
+          }
+        },
+        {
+          "key": "chicken_nanban",
+          "file": "icons/chicken_nanban.png",
+          "qa": {
+            "size": [
+              512,
+              512
+            ],
+            "mode": "RGBA",
+            "alpha_extrema": [
+              0,
+              255
+            ],
+            "content_bbox": [
+              21,
+              82,
+              491,
+              437
+            ],
+            "minimum_margin": 21,
+            "edge_clear": true
+          }
+        },
+        {
+          "key": "gratin",
+          "file": "icons/gratin.png",
+          "qa": {
+            "size": [
+              512,
+              512
+            ],
+            "mode": "RGBA",
+            "alpha_extrema": [
+              0,
+              255
+            ],
+            "content_bbox": [
+              14,
+              108,
+              504,
+              428
+            ],
+            "minimum_margin": 8,
+            "edge_clear": true
+          }
+        },
+        {
+          "key": "chawanmushi",
+          "file": "icons/chawanmushi.png",
+          "qa": {
+            "size": [
+              512,
+              512
+            ],
+            "mode": "RGBA",
+            "alpha_extrema": [
+              0,
+              255
+            ],
+            "content_bbox": [
+              70,
+              61,
+              442,
+              459
+            ],
+            "minimum_margin": 53,
+            "edge_clear": true
+          }
+        },
+        {
+          "key": "shrimp_chili",
+          "file": "icons/shrimp_chili.png",
+          "qa": {
+            "size": [
+              512,
+              512
+            ],
+            "mode": "RGBA",
+            "alpha_extrema": [
+              0,
+              255
+            ],
+            "content_bbox": [
+              26,
+              80,
+              486,
+              426
+            ],
+            "minimum_margin": 26,
             "edge_clear": true
           }
         }

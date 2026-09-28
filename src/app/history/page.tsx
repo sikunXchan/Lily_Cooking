@@ -3,7 +3,8 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import Link from "next/link";
 import { Trash2, Search, X, PlayCircle, Crown } from "lucide-react";
-import { motion, AnimatePresence, animate as animateValue, useMotionValue, useTransform, type PanInfo } from "framer-motion";
+import { motion, AnimatePresence, animate as animateValue, useMotionValue, useTransform } from "framer-motion";
+import { clampDeleteOffset, getSwipeAxis, type SwipeAxis } from "@/lib/swipeGesture";
 import CookingSession from "@/components/CookingSession";
 import CookedModal from "@/components/CookedModal";
 import IngredientIcon from "@/components/IngredientIcon";
@@ -56,33 +57,78 @@ function SwipeDeleteRow({
 }) {
   const x = useMotionValue(0);
   const railOpacity = useTransform(x, [DELETE_REVEAL_X, -24, 0], [1, 0.65, 0]);
+  const gesture = useRef<{ id: number; x: number; y: number; offset: number; axis: SwipeAxis } | null>(null);
+  const suppressClick = useRef(false);
 
   useEffect(() => {
-    if (!isOpen) animateValue(x, 0, DELETE_REVEAL_SPRING);
+    const animation = animateValue(x, isOpen ? DELETE_REVEAL_X : 0, DELETE_REVEAL_SPRING);
+    return () => animation.stop();
   }, [isOpen, x]);
 
-  const finishSwipe = (_event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
-    const open = info.offset.x < -34 || info.velocity.x < -320;
+  const settle = (open: boolean) => {
     animateValue(x, open ? DELETE_REVEAL_X : 0, DELETE_REVEAL_SPRING);
     onOpenChange(open);
   };
 
   return (
-    <div className={styles.swipeDeleteWrapper}>
-      <motion.div className={styles.swipeDeleteRail} style={{ opacity: railOpacity }}>
-        <button type="button" className={styles.swipeDeleteButton} onClick={onDelete} aria-label={deleteLabel}>
+    <div className={styles.swipeDeleteWrapper} onKeyDown={(event) => {
+      if (event.key === "ArrowLeft" || event.key === "ArrowRight" || event.key === "Escape") {
+        event.preventDefault();
+        settle(event.key === "ArrowLeft");
+      }
+    }}>
+      <motion.div className={styles.swipeDeleteRail} style={{ opacity: railOpacity, pointerEvents: isOpen ? "auto" : "none" }} aria-hidden={!isOpen}>
+        <button type="button" className={styles.swipeDeleteButton} onClick={onDelete} aria-label={deleteLabel} tabIndex={isOpen ? 0 : -1} disabled={!isOpen}>
           <Trash2 size={19} />
         </button>
       </motion.div>
       <motion.div
         className={styles.swipeDeleteSurface}
         style={{ x }}
-        drag="x"
-        dragConstraints={{ left: DELETE_REVEAL_X, right: 0 }}
-        dragElastic={0.04}
-        dragDirectionLock
-        onDragEnd={finishSwipe}
+        onPointerDown={(event) => {
+          if (!event.isPrimary || event.button !== 0) return;
+          suppressClick.current = false;
+          x.stop();
+          gesture.current = { id: event.pointerId, x: event.clientX, y: event.clientY, offset: x.get(), axis: "pending" };
+        }}
+        onPointerMove={(event) => {
+          const current = gesture.current;
+          if (!current || current.id !== event.pointerId) return;
+          const dx = event.clientX - current.x;
+          const dy = event.clientY - current.y;
+          if (current.axis === "pending") {
+            current.axis = getSwipeAxis(dx, dy);
+            if (current.axis === "vertical") {
+              suppressClick.current = true;
+              settle(false);
+              return;
+            }
+            if (current.axis === "horizontal") {
+              suppressClick.current = true;
+              event.currentTarget.setPointerCapture(event.pointerId);
+            }
+          }
+          if (current.axis !== "horizontal") return;
+          event.preventDefault();
+          event.stopPropagation();
+          x.set(clampDeleteOffset(current.offset + dx));
+        }}
+        onPointerUp={(event) => {
+          const current = gesture.current;
+          if (!current || current.id !== event.pointerId) return;
+          gesture.current = null;
+          if (current.axis === "horizontal") settle(x.get() < -34);
+          if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
+        }}
+        onPointerCancel={() => { gesture.current = null; settle(false); }}
+        onDragStart={(event) => event.preventDefault()}
         onClickCapture={(event) => {
+          if (suppressClick.current) {
+            event.preventDefault();
+            event.stopPropagation();
+            suppressClick.current = false;
+            return;
+          }
           if (!isOpen) return;
           event.preventDefault();
           event.stopPropagation();
@@ -365,7 +411,7 @@ export default function HistoryPage() {
           </div>
 
           <div className={styles.sectionScroll} ref={sectionScrollRef} onScroll={handleSectionScroll}>
-          <div className={styles.sectionPane}>
+          <div className={styles.sectionPane} data-active={activeSection === 'recent'} aria-hidden={activeSection !== 'recent'} inert={activeSection !== 'recent'}>
           <section className={styles.recentCookedSection}>
           <p className={styles.paneSubtitle}>{t.history.recentRecipesSubtitle}</p>
           {recentRecipes.length > 0 ? (
@@ -404,7 +450,7 @@ export default function HistoryPage() {
         </section>
         </div>
 
-        <div className={styles.sectionPane}>
+        <div className={styles.sectionPane} data-active={activeSection === 'saved'} aria-hidden={activeSection !== 'saved'} inert={activeSection !== 'saved'}>
           <p className={styles.paneSubtitle}>{t.history.savedRecipesSubtitle}</p>
 
           {/* Search & Filter */}
