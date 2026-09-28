@@ -79,6 +79,7 @@
    タップでもスワイプでも同じ位置に切り替わるようにする */
 .sectionScroll {
   display: flex;
+  align-items: flex-start;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
@@ -166,6 +167,13 @@
   touch-action: pan-y;
 }
 
+/* Keep the horizontal snap positions, but only the visible list contributes height. */
+.sectionPane[data-active="false"] {
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
 .swipeDeleteRail {
   position: absolute;
   inset: 0;
@@ -196,6 +204,8 @@
   z-index: 1;
   width: 100%;
   background: var(--background);
+  touch-action: pan-y;
+  user-select: none;
 }
 
 .recipePreviewButton {

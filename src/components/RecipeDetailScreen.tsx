@@ -12,6 +12,7 @@ import RecipeThumbnail from "./RecipeThumbnail";
 import UiIcon from "./UiIcon";
 import PremiumPaywall from "./PremiumPaywall";
 import RecipeConsiderationBadges from "./RecipeConsiderationBadges";
+import { useScreenWakeLock } from "@/lib/useScreenWakeLock";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import { usePremium } from "@/lib/premium/PremiumContext";
 import {
@@ -88,6 +89,7 @@ export default function RecipeDetailScreen({
   const [recording, setRecording] = useState(false);
   const [showPaywall, setShowPaywall] = useState(false);
   const mounted = useSyncExternalStore(() => () => {}, () => true, () => false);
+  useScreenWakeLock(Boolean(recipe) && !cooking && !recording);
 
   useEffect(() => {
     if (!recipe) return;

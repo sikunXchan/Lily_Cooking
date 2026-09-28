@@ -1,0 +1,67 @@
+{
+  "mode": "built-in image_gen",
+  "styleReference": "public/dishes/icons/meat_rolls.png",
+  "group": "home_cooking_02",
+  "icons": [
+    {
+      "key": "hamburger_steak",
+      "source": "exec-eee57194-b1bc-4734-b51f-19709cab3b4d.png",
+      "file": "icons/hamburger_steak.png",
+      "prompt": "Use case: stylized-concept. Asset type: ONE square transparent PNG dish icon for the Sikurepi cooking app. The attached image is a STYLE REFERENCE ONLY, not an edit target. New subject: Japanese hamburg steak: one thick oval browned ground-meat patty coated in dark demi-glace sauce, with broccoli and carrot beside it on an ivory plate. NO bun, bread, sandwich, or sliced steak. Match reference's warm polished hand-painted cute food illustration, clean dark-brown outlines, appetizing colors, three-quarter view from above. Give the front of the plate/bowl/cup two black eyes, a small smiling mouth and pink cheeks. ONE complete dish centered occupying about 80% of width, generous fully transparent margins, unclipped. GENUINELY transparent alpha background, no fake checkerboard, no white backdrop. No external cast shadow, words, logos, watermark, cutlery, extra props or multiple panels. The food must be easily identifiable at small icon size."
+    },
+    {
+      "key": "nikujaga",
+      "source": "exec-01366bb9-6428-4611-be58-59edbecbfadc.png",
+      "file": "icons/nikujaga.png",
+      "prompt": "Use case: stylized-concept. Asset type: ONE square transparent PNG dish icon for the Sikurepi cooking app. The attached image is a STYLE REFERENCE ONLY, not an edit target. New subject: Japanese nikujaga: a shallow ivory bowl of chunky simmered golden potatoes, thin curled beef slices, orange carrots, translucent onion and a few snow peas in light brown broth. Recognizable potato-and-meat stew, not curry. Match reference's warm polished hand-painted cute food illustration, clean dark-brown outlines, appetizing colors, three-quarter view from above. Give the front of the plate/bowl/cup two black eyes, a small smiling mouth and pink cheeks. ONE complete dish centered occupying about 80% of width, generous fully transparent margins, unclipped. GENUINELY transparent alpha background, no fake checkerboard, no white backdrop. No external cast shadow, words, logos, watermark, cutlery, extra props or multiple panels. The food must be easily identifiable at small icon size."
+    },
+    {
+      "key": "cabbage_rolls",
+      "source": "exec-1c5a1313-5d4f-4b1f-9ee1-a48ea53faea1.png",
+      "file": "icons/cabbage_rolls.png",
+      "prompt": "Use case: stylized-concept. Asset type: ONE square transparent PNG dish icon for the Sikurepi cooking app. The attached image is a STYLE REFERENCE ONLY, not an edit target. New subject: Two plump pale-green cabbage rolls with visible overlapping cabbage leaves, one cut end showing cooked minced-meat filling, in a little red tomato sauce on an ivory plate. Recognizable stuffed cabbage, not lettuce salad or spring rolls. Match reference's warm polished hand-painted cute food illustration, clean dark-brown outlines, appetizing colors, three-quarter view from above. Give the front of the plate/bowl/cup two black eyes, a small smiling mouth and pink cheeks. ONE complete dish centered occupying about 80% of width, generous fully transparent margins, unclipped. GENUINELY transparent alpha background, no fake checkerboard, no white backdrop. No external cast shadow, words, logos, watermark, cutlery, extra props or multiple panels. The food must be easily identifiable at small icon size."
+    },
+    {
+      "key": "ginger_pork",
+      "source": "exec-f93b2886-26ea-4270-a2ce-8f29b8a9055d.png",
+      "file": "icons/ginger_pork.png",
+      "prompt": "Use case: stylized-concept. Asset type: ONE square transparent PNG dish icon for the Sikurepi cooking app. The attached image is a STYLE REFERENCE ONLY, not an edit target. New subject: Japanese shogayaki ginger pork: several thin, wide browned pork slices with golden-brown ginger sauce and curved onion slices, beside a neat mound of shredded pale cabbage on an ivory plate. Not cubed chicken or generic stir fry. Match reference's warm polished hand-painted cute food illustration, clean dark-brown outlines, appetizing colors, three-quarter view from above. Give the front of the plate/bowl/cup two black eyes, a small smiling mouth and pink cheeks. ONE complete dish centered occupying about 80% of width, generous fully transparent margins, unclipped. GENUINELY transparent alpha background, no fake checkerboard, no white backdrop. No external cast shadow, words, logos, watermark, cutlery, extra props or multiple panels. The food must be easily identifiable at small icon size."
+    },
+    {
+      "key": "omurice",
+      "source": "exec-acdea0a7-1843-4686-baa3-7e483e0a8ea0.png",
+      "file": "icons/omurice.png",
+      "prompt": "Use case: stylized-concept. Asset type: ONE square transparent PNG dish icon for the Sikurepi cooking app. The attached image is a STYLE REFERENCE ONLY, not an edit target. New subject: Japanese omurice: a large smooth golden omelet wrapped around a mound of rice, a curved red ketchup stripe on top, a small cut at one end showing orange rice. Served on an ivory plate. Clearly rice-filled omelet, not scrambled egg. Match reference's warm polished hand-painted cute food illustration, clean dark-brown outlines, appetizing colors, three-quarter view from above. Give the front of the plate/bowl/cup two black eyes, a small smiling mouth and pink cheeks. ONE complete dish centered occupying about 80% of width, generous fully transparent margins, unclipped. GENUINELY transparent alpha background, no fake checkerboard, no white backdrop. No external cast shadow, words, logos, watermark, cutlery, extra props or multiple panels. The food must be easily identifiable at small icon size."
+    },
+    {
+      "key": "tamagoyaki",
+      "source": "exec-a615c7f2-3d6e-4bab-aac9-ff9a21b501f0.png",
+      "file": "icons/tamagoyaki.png",
+      "prompt": "Use case: stylized-concept. Asset type: ONE square transparent PNG dish icon for the Sikurepi cooking app. The attached image is a STYLE REFERENCE ONLY, not an edit target. New subject: Japanese tamagoyaki: four thick rectangular slices of golden rolled omelet arranged in a staggered row, clearly showing spiral egg layers, with a tiny mound of grated daikon on an ivory plate. No rice. Match reference's warm polished hand-painted cute food illustration, clean dark-brown outlines, appetizing colors, three-quarter view from above. Give the front of the plate/bowl/cup two black eyes, a small smiling mouth and pink cheeks. ONE complete dish centered occupying about 80% of width, generous fully transparent margins, unclipped. GENUINELY transparent alpha background, no fake checkerboard, no white backdrop. No external cast shadow, words, logos, watermark, cutlery, extra props or multiple panels. The food must be easily identifiable at small icon size."
+    },
+    {
+      "key": "chicken_nanban",
+      "source": "exec-8bfda897-2f96-4ac1-8dcb-7ad921857c60.png",
+      "file": "icons/chicken_nanban.png",
+      "prompt": "Use case: stylized-concept. Asset type: ONE square transparent PNG dish icon for the Sikurepi cooking app. The attached image is a STYLE REFERENCE ONLY, not an edit target. New subject: Japanese chicken nanban: a crisp golden battered boneless chicken fillet cut into thick strips with a generous chunky ivory tartar sauce topping, shredded cabbage beside it on an ivory plate. Not plain karaage. Match reference's warm polished hand-painted cute food illustration, clean dark-brown outlines, appetizing colors, three-quarter view from above. Give the front of the plate/bowl/cup two black eyes, a small smiling mouth and pink cheeks. ONE complete dish centered occupying about 80% of width, generous fully transparent margins, unclipped. GENUINELY transparent alpha background, no fake checkerboard, no white backdrop. No external cast shadow, words, logos, watermark, cutlery, extra props or multiple panels. The food must be easily identifiable at small icon size."
+    },
+    {
+      "key": "gratin",
+      "source": "exec-92efc720-0661-4672-8017-b9ce2af4296d.png",
+      "file": "icons/gratin.png",
+      "prompt": "Use case: stylized-concept. Asset type: ONE square transparent PNG dish icon for the Sikurepi cooking app. The attached image is a STYLE REFERENCE ONLY, not an edit target. New subject: Golden bubbling creamy gratin in one small ivory oval baking dish with short solid handles: browned melted cheese, a little visible macaroni and broccoli. Not layered lasagna, no bread. Match reference's warm polished hand-painted cute food illustration, clean dark-brown outlines, appetizing colors, three-quarter view from above. Give the front of the plate/bowl/cup two black eyes, a small smiling mouth and pink cheeks. ONE complete dish centered occupying about 80% of width, generous fully transparent margins, unclipped. GENUINELY transparent alpha background, no fake checkerboard, no white backdrop. No external cast shadow, words, logos, watermark, cutlery, extra props or multiple panels. The food must be easily identifiable at small icon size."
+    },
+    {
+      "key": "chawanmushi",
+      "source": "exec-e6e67782-5c8b-415e-8435-ea08a93cdfc7.png",
+      "file": "icons/chawanmushi.png",
+      "prompt": "Use case: stylized-concept. Asset type: ONE square transparent PNG dish icon for the Sikurepi cooking app. The attached image is a STYLE REFERENCE ONLY, not an edit target. New subject: Japanese chawanmushi: a small ivory ceramic cup filled with smooth pale-yellow savory steamed egg custard, topped with one pink shrimp, one shiitake mushroom slice and a small green leaf. No lid, spoon, or saucer. Match reference's warm polished hand-painted cute food illustration, clean dark-brown outlines, appetizing colors, three-quarter view from above. Give the front of the plate/bowl/cup two black eyes, a small smiling mouth and pink cheeks. ONE complete dish centered occupying about 80% of width, generous fully transparent margins, unclipped. GENUINELY transparent alpha background, no fake checkerboard, no white backdrop. No external cast shadow, words, logos, watermark, cutlery, extra props or multiple panels. The food must be easily identifiable at small icon size."
+    },
+    {
+      "key": "shrimp_chili",
+      "source": "exec-e5869afe-14e3-4322-8c62-498a3cdfe082.png",
+      "file": "icons/shrimp_chili.png",
+      "prompt": "Use case: stylized-concept. Asset type: ONE square transparent PNG dish icon for the Sikurepi cooking app. The attached image is a STYLE REFERENCE ONLY, not an edit target. New subject: Japanese ebi chili: several large curled pink-orange shrimp coated in glossy red chili sauce, scallion accents, on an ivory plate. Shrimp tails and curved bodies are clearly visible. No rice. Match reference's warm polished hand-painted cute food illustration, clean dark-brown outlines, appetizing colors, three-quarter view from above. Give the front of the plate/bowl/cup two black eyes, a small smiling mouth and pink cheeks. ONE complete dish centered occupying about 80% of width, generous fully transparent margins, unclipped. GENUINELY transparent alpha background, no fake checkerboard, no white backdrop. No external cast shadow, words, logos, watermark, cutlery, extra props or multiple panels. The food must be easily identifiable at small icon size."
+    }
+  ]
+}

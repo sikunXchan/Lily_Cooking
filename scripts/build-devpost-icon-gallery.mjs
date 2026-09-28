@@ -22,8 +22,9 @@ const dishFiles = (await fs.readdir(dishDirectory))
 if (ingredientFiles.length !== 385) {
   throw new Error(`Expected 385 ingredient icons, found ${ingredientFiles.length}`);
 }
-if (dishFiles.length !== 150) {
-  throw new Error(`Expected 150 dish icons, found ${dishFiles.length}`);
+const dishManifest = JSON.parse(await fs.readFile(path.join(ROOT, 'public/dishes/manifest.json'), 'utf8'));
+if (dishFiles.length !== dishManifest.count) {
+  throw new Error(`Expected ${dishManifest.count} dish icons, found ${dishFiles.length}`);
 }
 
 await fs.mkdir(outputDirectory, { recursive: true });
@@ -65,14 +66,14 @@ const background = Buffer.from(`
 
   <g transform="translate(0 100)">
   <text x="1060" y="126" fill="#17948d" font-family="Arial, sans-serif" font-size="28" font-weight="800" letter-spacing="8">SIKUREPI VISUAL LIBRARY</text>
-  <text x="1052" y="372" fill="url(#number)" font-family="Arial Rounded MT Bold, Arial, sans-serif" font-size="226" font-weight="900" letter-spacing="-12">535+</text>
+  <text x="1052" y="372" fill="url(#number)" font-family="Arial Rounded MT Bold, Arial, sans-serif" font-size="226" font-weight="900" letter-spacing="-12">${ingredientFiles.length + dishFiles.length}+</text>
   <text x="1062" y="478" fill="#40302c" font-family="Arial Rounded MT Bold, Arial, sans-serif" font-size="83" font-weight="900" letter-spacing="1">FOOD</text>
   <text x="1062" y="566" fill="#40302c" font-family="Arial Rounded MT Bold, Arial, sans-serif" font-size="83" font-weight="900" letter-spacing="1">ILLUSTRATIONS</text>
 
   <rect x="1060" y="622" width="337" height="92" rx="28" fill="#fff0f4" stroke="#f7c9d6" stroke-width="2"/>
   <text x="1095" y="680" fill="#dd466c" font-family="Arial, sans-serif" font-size="33" font-weight="800">385 INGREDIENTS</text>
   <rect x="1420" y="622" width="300" height="92" rx="28" fill="#fff5de" stroke="#f4d89d" stroke-width="2"/>
-  <text x="1456" y="680" fill="#b6761c" font-family="Arial, sans-serif" font-size="33" font-weight="800">150 DISHES</text>
+  <text x="1456" y="680" fill="#b6761c" font-family="Arial, sans-serif" font-size="33" font-weight="800">${dishFiles.length} DISHES</text>
 
   <text x="1064" y="784" fill="#6f5852" font-family="Arial, sans-serif" font-size="34" font-weight="600">
     <tspan x="1064" dy="0">A visual cooking language for</tspan>
