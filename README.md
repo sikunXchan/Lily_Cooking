@@ -11,9 +11,7 @@ cooking assistance, and cooking records. The app supports Japanese and English.
 
 ## Why Sikurepi exists
 
-I want to make it easier to decide what to cook and use ingredients before they
-are forgotten. My goal is to help people around the world enjoy cooking at home
-more often, improving their health while reducing food waste.
+I watched my mother worry every day about "what to cook tonight." One day I saw her throw away expired tofu and say, "I forgot I had bought it." Sikurepi is my attempt to make that decision easier: use what you already have, cook with less stress, and waste less.
 
 I built Sikurepi to follow what happens before and after a recipe is chosen,
 from buying ingredients through cooking and recording the result. That record
