@@ -36,8 +36,7 @@ then helps shape the next suggestion.
 - **History and community** — revisit recent and saved recipes, track ingredient
   coverage, and share cooked recipes. Personal cooking feedback informs future
   suggestions; free-text notes are not included in public recipe queries.
-- **Food-rescue collection** — discover more than 380 original ingredient and
-  dish illustrations while recording ingredients that were used before waste.
+- **Food-rescue collection** — discover more than 530 original ingredient and dish illustrations while recording ingredients that were used before waste.
 - **Progression** — cooking activity advances a ten-rank chef journey designed
   to make home cooking feel rewarding.
 - **Japanese and English** — the interface, generated content, and community
