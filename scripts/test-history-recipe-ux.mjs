@@ -1,23 +1,15 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
-import { getSwipeAxis, clampDeleteOffset } from '../src/lib/swipeGesture.ts';
 import { keepScreenAwake } from '../src/lib/screenWakeLock.ts';
 import { getDishIconSlug, getDishIconDisplayName, getDishIconCategory } from '../src/lib/dishIcons.ts';
 
-for (const [dx, dy, expected] of [
-  [0, 0, 'pending'], [5, 4, 'pending'], [-9, 3, 'pending'],
-  [-14, 3, 'horizontal'], [60, 5, 'horizontal'], [-8, 40, 'vertical'],
-  [-40, 80, 'vertical'], [-20, 20, 'vertical'], [-35, 25, 'vertical'],
-]) assert.equal(getSwipeAxis(dx, dy), expected);
-// Once a scroll is classified as vertical, later sideways motion is ignored.
-let axis = 'pending';
-for (const [dx, dy] of [[1, 3], [-3, 20], [-80, 40]]) {
-  if (axis === 'pending') axis = getSwipeAxis(dx, dy);
-}
-assert.equal(axis, 'vertical');
-assert.equal(clampDeleteOffset(-200), -76);
-assert.equal(clampDeleteOffset(10), 0);
-assert.equal(clampDeleteOffset(-40), -40);
+// Recent recipes are read-only; only an explicit saved-recipe button opens confirmation.
+const historyPage = await fs.readFile(new URL('../src/app/history/page.tsx', import.meta.url), 'utf8');
+assert.doesNotMatch(historyPage, /SwipeDeleteRow|deleteLocalRecentRecipe|onPointerMove/);
+assert.match(historyPage, /className=\{styles\.deleteRecipeButton\}/);
+assert.match(historyPage, /onClick=\{\(\) => confirmDelete\(recipe\.id\)\}/);
+assert.match(historyPage, /<dialog[\s\S]*aria-labelledby="delete-recipe-title"/);
+assert.match(historyPage, /cancelDeleteRef\.current\?\.focus\(\)/);
 
 const dishes = [
   ['和風おろしハンバーグ', 'hamburger_steak'], ['豆腐ハンバーグ', 'hamburger_steak'],
@@ -152,4 +144,4 @@ const tick = () => new Promise(resolve => setImmediate(resolve));
   await tick(); assert.equal(calls, 1, 'No retry loop when OS refuses');
   cleanup(); keepScreenAwake(doc)();
 }
-console.log(`History gestures, ${dishes.length} dish mappings and wake-lock lifecycle tests passed.`);
+console.log(`History deletion safeguards, ${dishes.length} dish mappings and wake-lock lifecycle tests passed.`);
